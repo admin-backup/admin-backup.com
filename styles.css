@@ -1,0 +1,94 @@
+/* styles.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #000000, #242424); /* A blue gradient background */
+    color: #ffffff; /* White text color for better contrast */
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 200px; /* Adjust as per your logo's aspect ratio */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.intro {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+.features {
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.features ul {
+    list-style: none; /* Removes the default list styling */
+    padding: 0;
+}
+
+.features li {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white background for list items */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type=email] {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #2193b0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #bddbf5;
+}
+
+footer p {
+    margin-top: 40px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
