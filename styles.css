@@ -1,88 +1,156 @@
+/* styles.css - Dark Theme for ADMINBACKUP with Footer and Countdown Timer Optimization */
 
-/* General Styles */
-:root {
-    --primary-color: #ffffff; /* White for text on dark background */
-    --secondary-color: #0d6efd; /* Bootstrap primary blue for buttons and links */
-    --background-color: #121212; /* Dark background */
-    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    font-family: var(--font-stack);
-    color: var(--primary-color);
-    background-color: var(--background-color);
+/* Basic reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #FFFFFF; /* High contrast text color */
+    background-color: #121212; /* Dark background for the entire body */
+    line-height: 1.6;
+}
+
 .container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Logo and Header Styles */
-.header-container {
-    display: flex;
-    align-items: center; /* Vertically center the items */
-    justify-content: flex-start; /* Align items to the start of the container */
-    margin-bottom: 20px; /* Spacing below the header */
-}
-
-.logo {
-    max-width: 80px; /* Adjust logo size */
-    height: auto;
-    margin-right: 20px; /* Spacing between logo and header text */
-    /* Adding modern styling for the logo */
-    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
-}
-
-/* Header title style */
-h1 {
-    font-size: 2.5rem; /* Slightly larger font size for header */
-    margin: 0; /* Remove default margin to align with the logo */
-    color: var(--secondary-color); /* Use the secondary color to make the title pop */
-}
-
-/* Timer Alignment */
-#countdown-timer {
+/* Header styles */
+header {
     text-align: center;
-    font-size: 1.5rem;
-    margin-top: 20px; /* Spacing above the timer */
-    color: var(--secondary-color);
+    padding: 50px 20px; /* Provide enough vertical space for the header */
+    background: #121212 url('logo-background.png') no-repeat center center; /* Dark theme marbled background */
+    background-size: cover;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-    }
-
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .logo {
-        margin-bottom: 10px; /* Spacing below the logo on smaller screens */
-    }
+/* Logo styles */
+.logo {
+    width: 200px; /* Width can be adjusted as needed */
+    height: auto;
+    margin: 0 auto; /* Center the logo horizontally */
 }
 
-/* Animation Styles */
-.animated-button {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 10px 20px;
+h1 {
+    color: #BB86FC; /* Light purple text to match the logo accent */
+    margin-bottom: 2rem;
+}
+
+/* Tagline and description styles with adequate contrast */
+.tagline {
+    font-size: 1.4rem;
+    color: #BBBBBB; /* Lighter grey to make it stand out less than the main title */
+}
+
+.description {
+    max-width: 800px; /* Maximum width for better readability */
+    margin: 1rem auto 3rem; /* Centering the text block */
+    color: #DDDDDD; /* Lighter grey for the description for better readability */
+}
+
+/* Features section with a translucent background */
+.features {
+    background: rgba(255, 255, 255, 0.05); /* Slightly visible against the dark background */
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.features h2, .features li {
+    color: #FFFFFF; /* White text for the features list */
+}
+
+/* Form and button styles for contrast and visibility */
+form {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #333; /* Slightly visible border */
+    margin-right: 10px;
+    width: 40%;
     border-radius: 5px;
+}
+
+.animated-button {
+    background-color: #BB86FC; /* Matching the light purple from the logo */
+    border: none;
+    color: #202020; /* Dark text for readability */
+    padding: 10px 20px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
 .animated-button:hover {
-    background-color: darken(var(--secondary-color), 10%); /* Darken button on hover */
-    transform: translateY(-2px);
+    background-color: #9A55D3; /* A darker shade for the hover state */
 }
 
-/* Additional styles can be added as per requirement */
+/* Footer styles with a consistent dark theme */
+footer {
+    background-color: #0A0A0A; /* Slightly lighter shade of black */
+    color: #AAAAAA; /* Grey text color */
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Ensure footer is above the countdown timer */
+    z-index: 10; /* Higher z-index so it's on top of the fixed positioned elements */
+}
+
+footer a {
+    color: #BB86FC; /* Light purple to match the logo's accent color */
+}
+
+/* Countdown timer styles for visibility and consistency */
+#countdown-timer {
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.75); /* Dark semi-transparent background for legibility */
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem; /* Slightly larger font size for readability */
+    z-index: 5; /* Lower z-index so it's below the footer */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 10px;
+    }
+
+    .logo {
+        width: 150px; /* Adjust the logo size for smaller devices */
+    }
+
+    input[type="email"] {
+        width: 60%; /* Adjust input width for smaller screens */
+    }
+
+    .description {
+        margin: 1rem auto; /* Adjust the margin for smaller screens */
+    }
+
+    footer {
+        position: static; /* Default position so it flows naturally in the document */
+        margin-top: 40px; /* Add space for the countdown timer */
+    }
+
+    #countdown-timer {
+        position: static; /* Allow the timer to be part of the natural document flow */
+        margin-top: 20px; /* Add some space above the timer */
+    }
+}
+
+/* Replace 'path_to_your_dark_marbled_background.png' with the actual path to your marbled background image */
