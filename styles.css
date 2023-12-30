@@ -1,117 +1,88 @@
-/* styles.css */
-body, html {
-    height: 100%;
+
+/* General Styles */
+:root {
+    --primary-color: #ffffff; /* White for text on dark background */
+    --secondary-color: #0d6efd; /* Bootstrap primary blue for buttons and links */
+    --background-color: #121212; /* Dark background */
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--primary-color);
+    background-color: var(--background-color);
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #000000, #242424); /* A blue gradient background */
-    color: #ffffff; /* White text color for better contrast */
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
+/* Logo and Header Styles */
+.header-container {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: flex-start; /* Align items to the start of the container */
+    margin-bottom: 20px; /* Spacing below the header */
+}
+
 .logo {
-    max-width: 200px; /* Adjust as per your logo's aspect ratio */
-    margin-bottom: 20px;
+    max-width: 80px; /* Adjust logo size */
+    height: auto;
+    margin-right: 20px; /* Spacing between logo and header text */
+    /* Adding modern styling for the logo */
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
 }
 
+/* Header title style */
 h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 2.5rem; /* Slightly larger font size for header */
+    margin: 0; /* Remove default margin to align with the logo */
+    color: var(--secondary-color); /* Use the secondary color to make the title pop */
 }
 
-.tagline {
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-top: 20px; 
-    margin-bottom: 20px; 
-    }
-    
-}
-
-.content-container {
-    max-width: 600px; 
-    margin-left: auto;
-    margin-right: auto;
+/* Timer Alignment */
+#countdown-timer {
     text-align: center;
+    font-size: 1.5rem;
+    margin-top: 20px; /* Spacing above the timer */
+    color: var(--secondary-color);
 }
 
-.description {
-    margin-top: 10px;
-    font-size: 1.2em;
-    margin-top: 20px; 
-    margin-bottom: 20px; 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Spacing below the logo on smaller screens */
+    }
 }
 
-.intro {
-    margin-bottom: 20px;
-    font-size: 1.2em;
-}
-
-.features {
-    margin: 30px auto;
-    max-width: 800px;
-    padding: 0 20px;
-}
-
-.features h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-.features ul {
-    list-style: none; /* Removes the default list styling */
-    padding: 0;
-}
-
-.features li {
-    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white background for list items */
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-input[type=email] {
-    padding: 10px;
-    margin-right: 10px;
+/* Animation Styles */
+.animated-button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     border: none;
-    border-radius: 5px;
-}
-
-button {
     padding: 10px 20px;
-    border: none;
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #2193b0;
     cursor: pointer;
-    font-weight: bold;
 }
 
-button:hover {
-    background-color: #bddbf5;
+.animated-button:hover {
+    background-color: darken(var(--secondary-color), 10%); /* Darken button on hover */
+    transform: translateY(-2px);
 }
 
-footer p {
-    margin-top: 40px;
-}
-
-footer a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
+/* Additional styles can be added as per requirement */
