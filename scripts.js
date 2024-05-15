@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Countdown timer for the launch date
     const countdownContainer = document.getElementById('countdown-timer');
     // Set the launch date and time (example date used here, adjust as necessary)
-    const launchDate = new Date('2024-03-01T00:00:00Z').getTime();
+    const launchDate = new Date('2024-07-01T00:00:00Z').getTime();
 
     const interval = setInterval(function() {
         const now = new Date().getTime();
